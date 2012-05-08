@@ -27,7 +27,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-//using System.Transactions;
+#if !MONO4ANDROID
+using System.Transactions;
+#endif
 using IsolationLevel = System.Data.IsolationLevel;
 using System.IO;
 using System.Text;

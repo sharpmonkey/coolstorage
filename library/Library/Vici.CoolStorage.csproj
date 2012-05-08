@@ -68,12 +68,11 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <HintPath>..\..\drivers\sqlite\References\System.Data.SQLite.DLL</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
-    <Reference Include="Vici.Core, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\References\Vici.Core\Vici.Core.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\BooleanValueAttribute.cs" />
@@ -132,6 +131,7 @@
     <Compile Include="CSTransaction.cs" />
     <Compile Include="CSTypedQuery.cs" />
     <Compile Include="CSDataProvider.cs" />
+    <Compile Include="Drivers\CSConfig.cs" />
     <Compile Include="Drivers\CSDataProviderAccess.cs" />
     <Compile Include="Drivers\CSDataProviderSqlServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,6 +163,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\core\Library\Vici.Core.csproj">
+      <Project>{472E40CE-377D-4C5D-B755-FA11DCDA2347}</Project>
+      <Name>Vici.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\drivers\sqlite\Vici.CoolStorage.SQLite.csproj">
+      <Project>{796286C2-CBBB-40F8-94A7-CFAD35DE1508}</Project>
+      <Name>Vici.CoolStorage.SQLite</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
